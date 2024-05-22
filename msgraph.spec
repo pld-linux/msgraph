@@ -5,12 +5,12 @@
 Summary:	Shared library for accessing MS Graph API
 Summary(pl.UTF-8):	Biblioteka współdzielona do dostępu do MS Graph API
 Name:		msgraph
-Version:	0.2.1
+Version:	0.2.2
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 Source0:	https://download.gnome.org/sources/msgraph/0.2/%{name}-%{version}.tar.xz
-# Source0-md5:	c215cbed866de925d77833f806059fa2
+# Source0-md5:	cff80470c7a222b6fbe2071ca4a1b199
 URL:		https://gitlab.gnome.org/GNOME/msgraph
 BuildRequires:	gcc >= 6:4.7
 %{?with_apidocs:BuildRequires:	gi-docgen}
