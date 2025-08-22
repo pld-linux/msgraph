@@ -6,7 +6,7 @@ Summary:	Shared library for accessing MS Graph API
 Summary(pl.UTF-8):	Biblioteka współdzielona do dostępu do MS Graph API
 Name:		msgraph
 Version:	0.2.3
-Release:	1
+Release:	2
 License:	LGPL v3+
 Group:		Libraries
 Source0:	https://download.gnome.org/sources/msgraph/0.2/%{name}-%{version}.tar.xz
@@ -17,11 +17,11 @@ BuildRequires:	gcc >= 6:4.7
 BuildRequires:	glib2-devel >= 1:2.28
 BuildRequires:	gnome-online-accounts-devel
 BuildRequires:	json-glib-devel
+BuildRequires:	librest-devel >= 0.9
 BuildRequires:	libsoup3-devel >= 3.0
 BuildRequires:	meson >= 0.63.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
-BuildRequires:	rest1-devel >= 0.9
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
@@ -29,8 +29,8 @@ BuildRequires:	uhttpmock1-devel >= 0.11.0
 BuildRequires:	xz
 Requires:	glib2 >= 1:2.28
 Requires:	json-glib
+Requires:	librest >= 0.9
 Requires:	libsoup3 >= 3.0
-Requires:	rest1 >= 0.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,8 +49,8 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.28
 Requires:	gnome-online-accounts-devel
 Requires:	json-glib-devel
+Requires:	librest-devel >= 0.9
 Requires:	libsoup3-devel >= 3.0
-Requires:	rest1-devel >= 0.9
 
 %description devel
 Header files for msgraph library.
