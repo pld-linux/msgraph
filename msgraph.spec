@@ -1,6 +1,7 @@
 #
 # Conditional build:
 %bcond_without	apidocs		# API documentation
+%bcond_without	tests		# build tests
 #
 Summary:	Shared library for accessing MS Graph API
 Summary(pl.UTF-8):	Biblioteka współdzielona do dostępu do MS Graph API
@@ -19,13 +20,14 @@ BuildRequires:	gnome-online-accounts-devel
 BuildRequires:	json-glib-devel
 BuildRequires:	librest-devel >= 0.9
 BuildRequires:	libsoup3-devel >= 3.0
+%{?with_tests:BuildRequires:	libxml2-devel}
 BuildRequires:	meson >= 0.63.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	uhttpmock1-devel >= 0.11.0
+%{?with_tests:BuildRequires:	uhttpmock1-devel >= 0.11.0}
 BuildRequires:	xz
 Requires:	glib2 >= 1:2.28
 Requires:	json-glib
@@ -75,7 +77,8 @@ Dokumentacja API biblioteki msgraph.
 
 %build
 %meson \
-	%{!?with_apidocs:-Dgtk_doc=false}
+	%{!?with_apidocs:-Dgtk_doc=false} \
+	-Dtests=%{__true_false tests}
 
 %meson_build
 
