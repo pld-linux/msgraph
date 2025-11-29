@@ -17,6 +17,7 @@ BuildRequires:	gcc >= 6:4.7
 %{?with_apidocs:BuildRequires:	gi-docgen}
 BuildRequires:	glib2-devel >= 1:2.28
 BuildRequires:	gnome-online-accounts-devel
+BuildRequires:	gobject-introspection-devel
 BuildRequires:	json-glib-devel
 BuildRequires:	librest-devel >= 0.9
 BuildRequires:	libsoup3-devel >= 3.0
