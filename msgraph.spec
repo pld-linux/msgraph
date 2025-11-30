@@ -6,12 +6,12 @@
 Summary:	Shared library for accessing MS Graph API
 Summary(pl.UTF-8):	Biblioteka współdzielona do dostępu do MS Graph API
 Name:		msgraph
-Version:	0.2.3
-Release:	2
+Version:	0.3.3
+Release:	1
 License:	LGPL v3+
 Group:		Libraries
-Source0:	https://download.gnome.org/sources/msgraph/0.2/%{name}-%{version}.tar.xz
-# Source0-md5:	051f7353e6a2b30b5b893bcf6d7539fa
+Source0:	https://download.gnome.org/sources/msgraph/0.3/%{name}-%{version}.tar.xz
+# Source0-md5:	67753ba622080308e0cfe17505cc2f7d
 URL:		https://gitlab.gnome.org/GNOME/msgraph
 BuildRequires:	gcc >= 6:4.7
 %{?with_apidocs:BuildRequires:	gi-docgen}
@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %if %{with apidocs}
 install -d $RPM_BUILD_ROOT%{_gidocdir}
-%{__mv} $RPM_BUILD_ROOT%{_docdir}/msgraph-0 $RPM_BUILD_ROOT%{_gidocdir}
+%{__mv} $RPM_BUILD_ROOT%{_docdir}/msgraph-1 $RPM_BUILD_ROOT%{_gidocdir}
 %endif
 
 %clean
@@ -102,19 +102,19 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NEWS README.md
-%attr(755,root,root) %{_libdir}/libmsgraph-0.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libmsgraph-0.so.1
-%{_libdir}/girepository-1.0/Msg-0.typelib
+%attr(755,root,root) %{_libdir}/libmsgraph-1.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libmsgraph-1.so.1
+%{_libdir}/girepository-1.0/Msg-1.typelib
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libmsgraph-0.so
+%attr(755,root,root) %{_libdir}/libmsgraph-1.so
 %{_includedir}/msg
-%{_datadir}/gir-1.0/Msg-0.gir
-%{_pkgconfigdir}/msgraph-0.1.pc
+%{_datadir}/gir-1.0/Msg-1.gir
+%{_pkgconfigdir}/msgraph-1.pc
 
 %if %{with apidocs}
 %files apidocs
 %defattr(644,root,root,755)
-%{_gidocdir}/msgraph-0
+%{_gidocdir}/msgraph-1
 %endif
